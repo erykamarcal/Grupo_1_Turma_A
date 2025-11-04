@@ -124,6 +124,13 @@ public class programa {
         digitarLento("Iniciando protocolo de treinamento...");
         tutorialBinario(); //puxa a função de conversao de binarios
 
+        MiniTesteCaleb teste = new MiniTesteCaleb();
+        try {
+            teste.testeNaoObrigatorio();
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+
         digitar("""
                 Caleb:
                 "Agora que você já entendeu como funciona, precisamos sair desse planeta
@@ -283,7 +290,7 @@ public class programa {
     }
 // ==============FIM EFEITOS DE TEXTO===============
 
-// ============ INICIO TUTORIAIS================
+// ============ INICIO FUNCOES DE TUTORIAIS================
 
     public void tutorialBinario() {
         System.out.println("\n===============================");
@@ -327,14 +334,16 @@ public class programa {
 
 //==========INICIO PARTE JULIA (COLOCAR NO MAIN)=============
 
-    public class MiniTesteCaleb {
+
+
+
+        public class MiniTesteCaleb {
 
         static Scanner sc = new Scanner(System.in);
         static int pontuacao = 0;
 
-
         // ==================== INÍCIO DO JOGO ====================
-        public void inicio() throws InterruptedException {
+        public void testeNaoObrigatorio() throws InterruptedException {
             digitar("Caleb: Ei! Antes de prosseguirmos, gostaria de fazer um mini teste para verificar o seu entendimento?");
             digitar("Digite 'Sim' para iniciar ou 'Não' para pular e seguir com o gameplay.");
             String escolha = sc.nextLine().trim().toLowerCase();
@@ -458,9 +467,11 @@ public class programa {
                 digitar("Caleb: Bom trabalho! Mas vamos revisar antes de continuar.");
             else
                 digitar("Caleb: Parece que precisamos repetir o treinamento. Não desanime!");
+            }
         }
-
     }
-}
+
+
+
 
 
