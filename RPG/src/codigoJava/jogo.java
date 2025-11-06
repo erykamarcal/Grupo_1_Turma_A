@@ -240,7 +240,8 @@ public class jogo {
                 """);
 
     }
-            // ALTERAR (DIMINUIR OU AUMENTAR) A VELOCIDADE DE DIGITAÇÃO QUANDO FINALIZAR O PROGRAMA
+
+    // ALTERAR (DIMINUIR OU AUMENTAR) A VELOCIDADE DE DIGITAÇÃO QUANDO FINALIZAR O PROGRAMA
     static void digitar(String texto) {
         for (int i = 0; i < texto.length(); i++) {
             System.out.print(texto.charAt(i)); // imprime uma letra
@@ -393,11 +394,15 @@ public class jogo {
             digitar("\n📘 Caleb: Revisando o ensinamento sobre " + titulo + "...");
             Thread.sleep(800);
             switch (titulo) {
-                case "Decimal → Binário" -> digitar("Você divide o número por 2 e anota os restos. Depois, lê os restos de baixo para cima.");
-                case "Binário → Decimal" -> digitar("Cada dígito binário vale uma potência de 2. Some apenas onde tiver 1.");
+                case "Decimal → Binário" ->
+                        digitar("Você divide o número por 2 e anota os restos. Depois, lê os restos de baixo para cima.");
+                case "Binário → Decimal" ->
+                        digitar("Cada dígito binário vale uma potência de 2. Some apenas onde tiver 1.");
                 case "Decimal → Octal" -> digitar("Divida o número por 8, anote os restos e leia de baixo para cima.");
-                case "Octal → Decimal" -> digitar("Cada dígito octal é multiplicado por potências de 8, da direita para a esquerda.");
-                case "Conversão Combinada" -> digitar("Primeiro transforme em binário, depois use o mesmo número para calcular em octal.");
+                case "Octal → Decimal" ->
+                        digitar("Cada dígito octal é multiplicado por potências de 8, da direita para a esquerda.");
+                case "Conversão Combinada" ->
+                        digitar("Primeiro transforme em binário, depois use o mesmo número para calcular em octal.");
             }
         }
 
@@ -425,5 +430,101 @@ public class jogo {
         }
     }
 
-}
+    public class modulosNave {
+        // =====================================
+        // TAREFAS DE MODULOS DA NAVE
+        //======================================
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in); //scanner para entrada de dados do usuario.
+
+            String[] SALAS = { //criação do vetor com os nomes das salas da nave
+
+                    "SALA DE ENERGIA",
+                    "SALA DO MOTOR",
+                    "SALA DE OXIGÊNIO",
+                    "SALA DAS CÂMERAS",
+                    "SALA DO SISTEMA CENTRAL",
+                    "SALA DO REATOR",
+                    "MÓDULO DE POUSO"
+            };
+
+            //Começo da cena
+            digitar("CALEB: PILOTO! VOCÊ CONSEGUIU LIGAR A NAVE!");
+            digitar("A TADS1 sabe onde nós estamos! Precisamos sair daqui antes que o exército dela nos alcance!");
+            digitar("=========================================");
+            digitar("\n⚠ ATENÇÃO PILOTO! A NAVE ESTÁ SOB ATAQUE!");
+            digitar("ALGUMAS SALAS FORAM DANIFICADAS, REALIZE TAREFAS EM CADA UMA DELAS PARA PROSSEGUIR\n");
+            digitar("""
+                    ==============================================
+                    VAMOS INICIAR PELA SALA ZERO (SALA DE ENERGIA)
+                    ==============================================
+                    """);
+
+            //Laço de repetição para percorrer as salas em ordem númerica
+            for (int i = 0; i < SALAS.length; i++) {
+
+                System.out.println(~~~~~~~~~~~~~~~~~~~~~~~~~~);
+                digitar("Você entrou na sala" + SALAS[i]);
+                System.out.println(~~~~~~~~~~~~~~~~~~~~~~~~~~);
+
+                boolean tarefaConcluida = false; //Variável que indica se o usuario acertou a tarefa.
+                int erros = 0; //contador de erros (no máximo 1 permitido)
+
+                while (!tarefaConcluida) { //Laço de repetição para repetir a tarefa até acertar (ou erra uma vez e depois acertar)
+
+                    // CADA SALA TEM SUA TAREFA ESPECIFÍCA --
+
+                    switch (i) {
+                        case 0: //SALA DE ENERGIA
+                            digitar("Caleb: ATENÇÃO, PILOTO! A SALA DE ENERGIA FOI DANIFICADA!");
+                            digitarLento("TAREFA: Converta o número 25 (decimal) para binário: ");
+                            String respEnergia = sc.next();
+                            if (respEnergia.equals("11001")) {
+                                digitar("Caleb: PARABÉNS! A ENERGIA DA NAVE FOI RESTAURADA!");
+                                tarefaConcluida = true;
+                            } else {
+                                erros++;
+                                if (erros < 2)
+                                    digitar("FALHA NO SISTEMA, TENTE NOVAMENTE!");
+                            }else{
+                            digitar("SEGUNDA FALHA DETECTADA, REFAZENDO A TAREFA!");
+                        }
+                        break;
+
+                        case 1: //SALA DO MOTOR
+                            digitar("Caleb: A SALA DO MOTOR FOI INVADIDA PELA TADS1!");
+                            digitarLento("TAREFA: Converta o numero 101101 (binário) para decimal:");
+                            int motor = sc.nextInt();
+                            if (motor == 45) {
+                                digitar("Caleb: PARABÉNS! MOTORES CONSERTADOS!");
+                                tarefaConcluida = true;
+                            } else {
+                                erros++;
+                                if (erros < 2)
+                                    digitar("MOTOR COM SOMENTE 20% FUNCIONANDO, TENTE NOVAMENTE!");
+                            }else{
+                            digitar("ERRO CRÍTICO! REPITA A TAREFA!");
+                        }
+                        break;
+
+                        case 2: // SALA DE OXIGÊNIO
+                            digitar("Caleb: A TADS1 IMPLANTOU UM VÍRUS NO SISTEMA DE OXIGÊNIO!");
+                            digitarLento("TAREFA: Converta o numero 10100 (binário) para decimal:");
+                            int oxigenio = sc.nextInt();
+                            if (oxigenio == 20) {
+                                digitar("Caleb: PARABÉNS! SISTEMAS DE OXIGÊNIO FUNCIONANDO!");
+                                tarefaConcluida = true;
+                            } else {
+                                erros++;
+                                if (erros < 2)
+                                    digitar("OXIGÊNIO EM 45%, TENTE NOVAMENTE!");
+                            }else{
+                            digitar("SEGUNDA FALHA DETECTADA, REFAZENDO A TAREFA!");
+
+                        }
+                        break;
+                    }
+                }
+            }
+        }
 
