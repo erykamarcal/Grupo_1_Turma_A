@@ -57,59 +57,59 @@ public class programa {
 
     public void jogar() {
         Scanner input = new Scanner(System.in);
-        System.out.println("""
+        System.out.println( cores.ROXO + """
                  =================================================
                  🚀 FINAL CODE: Sobrevivência entre Zeros e Uns 🚀
                  =================================================
-                """);
-        digitar("Ano: 2510.");
+                """ + cores.RESET);
+        digitar(cores.NEGRITO + "Ano: 2510.");
         digitar("A inteligencia artificial TADS1, criada para ajudar a humanidade, voltou-se contra seus criadores.");
         digitar("Ela assumiu o controle das máquinas, naves, e criou seu próprio exército de autômatos,");
         digitar("todos programados em códigos numéricos misteriosos...");
-        digitar("\nOs humanos sobreviventes chamam-se de \"A Resistência\" e lutam para salvar a humanidade.");
+        digitar("\nOs humanos sobreviventes chamam-se de \"A Resistência\" e lutam para salvar a humanidade." + cores.RESET);
 
         String nomeJogador;
         do {
-            digitar("Você será um sobrevivente. Um rebelde!");
-            digitar("Digite o seu nome de rebelde:");
+            digitar(cores.NEGRITO + "Você será um sobrevivente. Um rebelde!");
+            digitar("Digite o seu nome de rebelde:" + cores.RESET);
             nomeJogador = input.nextLine().trim();
 
             if (nomeJogador.isEmpty()) { //if para não validar caso o jogador aperte enter (.isEmpty())
-                digitar("Preciso de um nome válido para registrá-lo no sistema, tripulante!");
-                System.out.println("Tente novamente.");
+                digitar(cores.VERMELHO + "Preciso de um nome válido para registrá-lo no sistema, tripulante!" + cores.RESET);
+                System.out.println(cores.VERMELHO + "Tente novamente." + cores.RESET);
             }
         } while (nomeJogador.isEmpty());
 
-        System.out.println("\nBem-vindo, " + nomeJogador + "!");
+        System.out.println(cores.NEGRITO + "\nBem-vindo, "+ cores.RESET + cores.ROXO + nomeJogador + cores.RESET + cores.NEGRITO + "!" + cores.RESET);
         System.out.println();
-        System.out.println("Pressione ENTER para iniciar!");
+        System.out.println(cores.NEGRITO + "Pressione " + cores.RESET + cores.AMARELO + "ENTER" + cores.RESET + cores.NEGRITO+ " para iniciar!" + cores.RESET);
         input.nextLine();
 
         //Inicio do Capítulo 1
-        digitar("""
+        digitar(cores.NEGRITO +"""
                 Voce desperta no interior de uma nave antiga.
                 O som constante dos motores mistura-se aos gritos da tripulação se preparando para pousar.
                 A Resistência os enviou com um único objetivo: encontrar o Códice de Origem,
                 o primeiro núcleo de programação da TADS1 e a melhor alternativa para destruí-la.
-                """);
-        System.out.println("Pressione ENTER para saber mais!...");
+                """ + cores.RESET);
+        System.out.println(cores.NEGRITO +"Pressione " + cores.RESET + cores.AMARELO +"ENTER"+ cores.RESET + cores.NEGRITO +" para saber mais!..." + cores.RESET);
         input.nextLine();
 
-        System.out.println("""
+        System.out.println(cores.AZUL + """
                         == == == == == == == == == == == == ==
                                   CAPÍTULO 1:A Missão
                         ======================================
-                """);
-        digitar("""
+                """ + cores.RESET);
+        digitar(cores.NEGRITO +"""
                 Você retorna à nave, cansado e apavorado...e carrega algo nos braços...
                 É o CÓDICE DE ORIGEM!
                 Você precisa protegê-lo e levá-lo à Terra para que a Resistência desative o inimigo!
                 
-                """);
+                """ + cores.RESET);
 
-        System.out.println("Caleb (Assistente Virtual da Nave):");
-        digitar("""       
-                "Tripulante, todos os sinais vitais da tripulação foram perdidos!
+        System.out.println(cores.CIANO +"Caleb " + cores.RESET + cores.CINZA +"(Assistente Virtual da Nave)"+ cores.RESET + cores.CIANO+":" + cores.RESET);
+        digitar(cores.NEGRITO +"""       
+                Tripulante, todos os sinais vitais da tripulação foram perdidos!
                 
                 Você é o último humano da missão e precisará assumir o controle da nave, decifrar os
                 códigos de segurança e levar o códice para a Resistência! Eu vou ajudar!
@@ -120,11 +120,11 @@ public class programa {
                 Antes que ela nos encontre e nos destrua!
                 
                 Cada sistema da nave corresponde a uma conversão numerica, mas não se preocupe, eu vou te treinar!
-                """);
+                """ + cores.RESET);
 
-        System.out.println("Pressione ENTER para iniciar o 1° tutorial...");
+        System.out.println(cores.NEGRITO +"Pressione "+ cores.RESET + cores.AMARELO +"ENTER "+ cores.RESET + cores.NEGRITO +"para iniciar o "+cores.RESET + cores.AZULCLARO+"1° tutorial..."+ cores.RESET);
         input.nextLine();
-        digitarLento("Iniciando protocolo de treinamento...");
+        digitarLento(cores.AZULCLARO +"Iniciando protocolo de treinamento..." + cores.RESET);
         tutorialBinario(); //puxa a função de conversao de binarios
 
         MiniTesteCaleb teste = new MiniTesteCaleb();
@@ -134,23 +134,23 @@ public class programa {
             Thread.currentThread().interrupt();
         }
 
-        digitar("""
-                Caleb:
+        digitar(cores.CIANO+ "Caleb: "+ cores.RESET + cores.NEGRITO +"""
+               
                 "Agora que você já entendeu como funciona, precisamos sair desse planeta
                 Antes que aqueles drones nos encontre!"
                 Você precisa desativar o sistema de segurança e, em seguida, colocar a nave em orbita!"
                 
-                """);
+                """+ cores.RESET);
 
-        System.out.println("PRIMEIRO DESAFIO: LIGAR A NAVE");
-        System.out.println("Pressione ENTER para continuar!");
+        System.out.println(cores.AZULCLARO+"PRIMEIRO DESAFIO: LIGAR A NAVE"+ cores.RESET);
+        System.out.println(cores.AZULCLARO+"Pressione "+ cores.RESET + cores.AMARELO+"ENTER "+cores.RESET + cores.AZUL+ "para continuar!"+ cores.RESET);
         input.nextLine();
-        System.out.println("""
+        System.out.println(cores.AZUL+"""
                 
                  =========================================
                  DESAFIO 1: Ligar a Nave e Sair do Planeta
                  =========================================
-                """);
+                """+cores.RESET);
         digitar("Caleb: \"" + nomeJogador + ", o painel de energia está travado!\"");
         digitar("Caleb: \"Você precisa decifrar os códigos binários para desativar o sistema de segurança.\"");
         digitarRapido("Os códigos aparecerão um de cada vez...");
@@ -162,72 +162,72 @@ public class programa {
 
         // Vetor com os números que o jogador precisa converter
         String[] codigosBinarios = {"10", "101", "111", "1000"}; //numeros em binario
-        int[] respostasDecimais = {2, 5, 7, 8}; //resposta em decimal
+        int[] respostasDecimais  = {2, 5, 7, 8}; //resposta em decimal
 
         int tentativasRestantes = 2; // da duas tentativas para ligar a nave
         int somaTotal = 0; // somará os valores em decimal, para poder entrar em orbita depois.
         boolean falhou = false;
 
         for (int i = 0; i < codigosBinarios.length; i++) {
-            digitar("Código: " + (i + 1) + ": " + codigosBinarios[i]);
+            digitar(cores.NEGRITO+"Código: " + (i + 1) + ": " + codigosBinarios[i]);
 
-            System.out.println("Digite quanto esse numero vale em decimal: ");
+            System.out.println("Digite quanto esse numero vale em decimal: "+cores.RESET);
             int respostaJogador = input.nextInt();
             if (respostaJogador == respostasDecimais[i]) {
-                digitarRapido("Correto! Código " + (i + 1) + " desativado com sucesso.");
+                digitarRapido(cores.VERDECLARO+"Correto!"+cores.RESET+cores.NEGRITO+"Código " + (i + 1) + " desativado com sucesso."+cores.RESET);
                 somaTotal += respostaJogador; // vai acumular se a resposta for certa
             } else {
                 tentativasRestantes--;
                 if (tentativasRestantes > 0) {
-                    digitar("Valor incorreto!");
-                    digitar("Caleb: \"Concentre-se, " + nomeJogador + "! Você só tem mais uma chance!");
+                    digitar(cores.VERMELHO+"Valor incorreto!"+cores.RESET);
+                    digitar(cores.CIANO+"Caleb:"+cores.RESET+cores.NEGRITO+"\"Concentre-se, "+cores.RESET +cores.ROXO + nomeJogador + cores.RESET+ cores.NEGRITO+ "! Você só tem mais uma chance!"+cores.RESET);
                 } else {
                     falhou = true;
                     break;
                 }
             }
-            digitarRapido("Procurando próximo código...");
+            digitarRapido(cores.NEGRITO+"Procurando próximo código..."+cores.RESET);
             System.out.println();
         }
         if (falhou) {
-            digitarRapido("⚠ Falha crítica no sistema de segurança...");
-            digitarRapido("A TADS1 detectou nossa localização!");
-            digitarRapido("Explosão iminente em 3...");
+            digitarRapido(cores.VERMELHO+"⚠ Falha crítica no sistema de segurança..."+cores.RESET);
+            digitarRapido(cores.AMARELO+"A TADS1 detectou nossa localização!"+cores.RESET);
+            digitarRapido(cores.VERMELHO+"Explosão iminente em 3...");
             digitarRapido("2...");
             digitarRapido("1...");
-            digitar("FIM DE JOGO.");
+            digitar("FIM DE JOGO."+cores.RESET);
             System.exit(0);
         }
         // Parte 2 - Colocar a nave em órbita (soma dos valores)
 
-        digitar("Caleb: \"Excelente, " + nomeJogador + "! O sistema de segurança foi desativado.\"");
+        digitar(cores.CIANO+"Caleb:"+cores.RESET+cores.NEGRITO+"\"Excelente, "+cores.RESET+ cores.ROXO + nomeJogador + cores.RESET+ cores.NEGRITO+"! O sistema de segurança foi desativado.\"");
         digitar("""
                 Agora precisamos colocar a nave em órbita.
                 Para isso, realize a soma dos valores decifrados e insira o resultado final:
-                """);
+                """+cores.RESET);
 
 // Exibir os valores que o jogador acertou
-        digitar("Valores decifrados por você:");
+        digitar(cores.NEGRITO+"Valores decifrados por você:"+cores.RESET);
         for (int i = 0; i < respostasDecimais.length; i++) {
             digitar("→ " + respostasDecimais[i]);
         }
 
-        digitarLento("Iniciando sequência de propulsão...");
-        digitar("\nDigite a soma total dos valores decifrados: "); // Soma esperada: 22
+        digitarLento(cores.VERDECLARO+"Iniciando sequência de propulsão..."+cores.RESET);
+        digitar(cores.NEGRITO+"\nDigite a soma total dos valores decifrados: "+cores.RESET); // Soma esperada: 22
         int respostaFinal = input.nextInt();
 
         if (respostaFinal == somaTotal) {
-            digitar("Caleb: ");
-            digitar("Mandou bem, " + nomeJogador + "! Propulsores em ignição...");
-            digitar("A nave está subindo!");
-            digitar("Entrando em órbita do planeta F25A...");
-            digitar("Caleb: Excelente trabalho! Graças a voce, a humanidade poderá ter uma chance!");
+            digitar(cores.CIANO+"Caleb: "+cores.RESET);
+            digitar(cores.NEGRITO+"Mandou bem, "+cores.RESET+cores.ROXO + nomeJogador + cores.RESET+ cores.VERDECLARO+"! Propulsores em ignição..."+cores.RESET);
+            digitar(cores.NEGRITO+"A nave está subindo!");
+            digitar("Entrando em órbita do planeta F25A..."+cores.RESET);
+            digitar(cores.CIANO+"Caleb:"+cores.RESET+cores.VERDECLARO+"Excelente trabalho! "+cores.RESET+cores.NEGRITO+"Graças a voce, a humanidade poderá ter uma chance!"+cores.RESET);
         } else {
-            digitar("Valor incorreto!");
-            digitar("Caleb: A soma está errada... os motores não responderam a tempo!");
-            digitar("Falha na decolagem!");
+            digitar(cores.VERMELHO+"Valor incorreto!"+cores.RESET);
+            digitar(cores.CIANO+"Caleb:"+cores.RESET+cores.VERMELHO+"A soma está errada..."+cores.RESET+cores.NEGRITO+" os motores não responderam a tempo!"+cores.RESET);
+            digitar(cores.VERMELHO+"Falha na decolagem!");
             digitar("A nave foi localizada pela TADS1...");
-            digitarRapido("FIM DE JOGO.");
+            digitarRapido("FIM DE JOGO."+cores.RESET);
             System.exit(0);
             // Adicionar opção de voltar para o iniciar, inves de encerrar. Ou dar 2 chances.
         }
@@ -237,18 +237,22 @@ public class programa {
     // ========FIM DA FUNÇÃO JOGAR: (FIM DO MAIN) ==============
 
     public void creditos() {
-        System.out.println("\n=== CRÉDITOS ===");
-        digitar("""
+        System.out.println(cores.ROXO+"\n=== CRÉDITOS ==="+cores.RESET);
+        digitar(cores.ROXO+"""
                 Desenvolvido por:
                 
-                GRUPO 1 - TURMA A
+                GRUPO 1 - TURMA A 
                 
-                NOME
-                NOME
-                NOME
-                NOME
-                NOME
-                """);
+                """
+
+                 +cores.RESET+ cores.AZULCLARO+
+                """
+                NOME ALEXANDRE RODOLPHO DE MEDEIROS
+                NOME ALICE HARDER CARDOSO
+                NOME ERYKA KAROLYNA MARCAL DO SANTOS
+                NOME FELIPE DE PAULA CASTOR
+                NOME JULIA BEATRIZ XAVIER FERREIRA
+                """+cores.RESET);
     }
 
     public void sair() {
@@ -315,42 +319,42 @@ public class programa {
 // ============ INICIO FUNCOES DE TUTORIAIS================
 
     public void tutorialBinario() {
-        System.out.println("\n===============================");
+        System.out.println(cores.AZUL+"\n===============================");
         System.out.println("TUTORIAL: SISTEMA BINÁRIO");
-        System.out.println("===============================\n");
+        System.out.println("===============================\n"+cores.RESET);
 
-        digitar("Caleb: 'Os números binários são a língua dos computadores, usando apenas 0 e 1.'");
+        digitar(cores.CIANO+"Caleb:"+ cores.RESET + cores.NEGRITO+"'Os números binários são a língua dos computadores, usando apenas 0 e 1.'");
         digitar("Para converter um número decimal em binário, divida-o por 2 várias vezes e anote os restos.");
-        digitar("Depois, leia os restos de baixo pra cima.'");
+        digitar("Depois, leia os restos de baixo pra cima.'"+ cores.RESET);
 
-        digitar("\nExemplo:");
-        digitarLento("13 ÷ 2 = 6 (resto 1)");
+        digitar(cores.AZULCLARO+"\nExemplo:"+ cores.RESET);
+        digitarLento(cores.NEGRITO+"13 ÷ 2 = 6 (resto 1)");
         digitarLento("6 ÷ 2 = 3 (resto 0)");
         digitarLento("3 ÷ 2 = 1 (resto 1)");
-        digitarLento("1 ÷ 2 = 0 (resto 1)");
-        digitarLento("Lendo os restos de baixo pra cima → 1101");
-        digitarLento("Portanto, 13 (decimal) = 1101 (binário).");
+        digitarLento("1 ÷ 2 = 0 (resto 1)"+cores.RESET);
+        digitarLento(cores.NEGRITO+"Lendo os restos de baixo pra cima →"+cores.RESET+ cores.AZULCLARO+"1101"+cores.RESET);
+        digitarLento(cores.NEGRITO+"Portanto,"+cores.RESET+ cores.AZULCLARO+"13 "+cores.RESET+ cores.NEGRITO+"(decimal) = "+cores.RESET+ cores.AZULCLARO+"1101 "+cores.RESET+ cores.NEGRITO+"(binário)."+cores.RESET);
 
-        System.out.println("\nPressione ENTER para continuar...");
+        System.out.println(cores.NEGRITO+"\nPressione "+cores.RESET+ cores.AMARELO+ "ENTER "+ cores.RESET + cores.NEGRITO+ "para continuar..."+cores.RESET);
         input.nextLine();
     }
 
     public void tutorialOctal() {
-        System.out.println("\n===============================");
+        System.out.println(cores.AZUL+"\n===============================");
         System.out.println(" TUTORIAL: SISTEMA OCTAL");
-        System.out.println("===============================\n");
+        System.out.println("===============================\n"+cores.RESET);
 
-        digitar("Caleb: 'O sistema octal usa apenas os números de 0 a 7.'");
+        digitar(cores.CIANO+"Caleb:"+cores.RESET + cores.NEGRITO+"'O sistema octal usa apenas os números de 0 a 7.'");
         digitar("Para converter um número decimal para octal, divida o número por 8 várias vezes e anote os restos.");
-        digitar("Leia os restos de baixo pra cima.'");
+        digitar("Leia os restos de baixo pra cima.'"+ cores.RESET);
 
-        digitar("Exemplo:");
-        digitar("125 ÷ 8 = 15 (resto 5)");
+        digitar(cores.AZULCLARO+"Exemplo:"+cores.RESET);
+        digitar(cores.NEGRITO+"125 ÷ 8 = 15 (resto 5)");
         digitar("15 ÷ 8 = 1 (resto 7)");
-        digitar("1 ÷ 8 = 0 (resto 1)");
-        digitar("Resultado: 125 (decimal) = 175 (octal).");
+        digitar("1 ÷ 8 = 0 (resto 1)"+cores.RESET);
+        digitar(cores.NEGRITO+"Resultado:"+cores.RESET+ cores.AZULCLARO+"125 "+cores.RESET+ cores.NEGRITO+"(decimal) = "+cores.RESET+ cores.AZULCLARO+"175 "+cores.RESET+ cores.NEGRITO+"(octal)."+cores.RESET);
 
-        System.out.println("\nPressione ENTER para continuar...");
+        System.out.println(cores.NEGRITO+"\nPressione"+cores.RESET+ cores.AMARELO+"ENTER"+cores.RESET+ cores.NEGRITO+"para continuar..."+cores.RESET);
         input.nextLine();
     } //================FIM TUTORIAIS=================
 
