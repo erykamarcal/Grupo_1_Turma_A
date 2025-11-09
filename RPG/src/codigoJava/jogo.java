@@ -5,7 +5,7 @@ public class jogo {
             programa meuJogo = new programa();
 
             // chama o menu principal
-            meuJogo.mostrarMenu("🚀 FINAL CODE: Sobrevivência entre Zeros e Uns 🚀");
+            meuJogo.mostrarMenu(programa.cores.ROXO +"🚀 FINAL CODE: Sobrevivência entre Zeros e Uns 🚀" + programa.cores.RESET);
         }
     }
 

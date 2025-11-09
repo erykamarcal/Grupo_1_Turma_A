@@ -11,14 +11,14 @@ public class programa {
     public void mostrarMenu(String sovrevivenciaEntreZerosUns) {
         int opcao;
         do {
-            System.out.println("==========================================");
+            System.out.println(cores.CINZA + "==========================================");
             System.out.println(sovrevivenciaEntreZerosUns);
-            System.out.println("==========================================");
-            System.out.println("1 - Instruções");
+            System.out.println(cores.CINZA + "==========================================" + cores.RESET);
+            System.out.println(cores.AZULCLARO + "1 - Instruções");
             System.out.println("2 - Jogar");
             System.out.println("3 - Créditos");
-            System.out.println("4 - Sair");
-            System.out.print("Escolha uma opção: ");
+            System.out.println("4 - Sair" + cores.RESET );
+            System.out.print(cores.VERDECLARO + "Escolha uma opção: " + cores.RESET);
             opcao = input.nextInt();
             input.nextLine();
 
@@ -35,22 +35,22 @@ public class programa {
 
     public void instrucoes() {
         System.out.println("========================================");
-        digitarRapido("         INSTRUÇÕES DE JOGO");
+        digitarRapido(cores.AMARELO + "         INSTRUÇÕES DE JOGO" + cores.RESET);
         System.out.println("========================================");
-        digitar("Bem-vindo à Resistência! Você será um rebelde encarregado de salvar a humanidade!");
-        digitar("Durante o jogo, você fará conversões numéricas (binário, octal e decimal)");
-        System.out.println("\nINSTRUÇÕES: \n");
-        digitar("- Leia com atenção as mensagens de Caleb, seu assistente.");
+        digitar(cores.NEGRITO + "Bem-vindo à Resistência! Você será um rebelde encarregado de salvar a humanidade!");
+        digitar("Durante o jogo, você fará conversões numéricas (binário, octal e decimal)" + cores.RESET);
+        System.out.println(cores.AMARELO + "\nINSTRUÇÕES: \n" + cores.RESET);
+        digitar(cores.NEGRITO + "- Leia com atenção as mensagens de Caleb, seu assistente.");
         digitar("- Durante o jogo, você será desafiado com testes de conversões numérica");
         digitar("- Quando solicitado, digite respostas numéricas ou palavras ('sim' ou 'não').");
         digitar("- Você terá um número limitado de duas tentativas por questão");
         digitar("- Ao errar 2x, você perde um ponto crítico. Você terá 3");
-        digitar("- Se perder os 3 pontos críticos, você perde o jogo e define o destino da humanidade");
+        digitar("- Se perder os 3 pontos críticos, você perde o jogo e define o destino da humanidade" + cores.RESET);
 
-        System.out.println("DICA:");
-        digitar("Use o raciocínio lógico e lembre-se das conversões ensinadas nos tutoriais.");
-        digitar("A humanidade depende da sua precisão!");
-        System.out.println("Pressione ENTER para voltar ao menu principal...");
+        System.out.println(cores.AMARELO + "DICA:" + cores.RESET);
+        digitar(cores.NEGRITO + "Use o raciocínio lógico e lembre-se das conversões ensinadas nos tutoriais.");
+        digitar("A humanidade depende da sua precisão!" + cores.RESET);
+        System.out.println(cores.NEGRITO + "Pressione " + cores.RESET + cores.AMARELO + " ENTER " + cores.RESET + cores.NEGRITO + " para voltar ao menu principal..." + cores.RESET);
         input.nextLine();
     }
 
@@ -294,12 +294,16 @@ public class programa {
 
     public static class cores{
         public static final String RESET ="\u001B[0m";
-        public static final String VERMELHO ="\u001B[31m";
+        public static final String VERMELHO ="\u001B[91m";
+        public static final String VERDECLARO ="\u001B[92m";
         public static final String VERDE ="\u001B[32m";
-        public static final String AMARELO ="\u001B[33m";
+        public static final String AMARELO ="\u001B[93m";
         public static final String AZUL ="\u001B[34m";
-        public static final String ROXO ="\u001B[35m";
-        public static final String CIANO ="\u001B[36m";
+        public static final String AZULCLARO ="\u001B[94m";
+        public static final String ROXO ="\u001B[95m";
+        public static final String CIANO ="\u001B[96m";
+        public static final String CINZA ="\u001B[90m";
+        public static final String NEGRITO ="\u001B[1m";
 
         public static void fala (String cor, String texto){
             System.out.println(cor + texto + RESET);
