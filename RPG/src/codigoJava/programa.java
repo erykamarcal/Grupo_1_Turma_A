@@ -236,8 +236,106 @@ public class programa {
             // Adicionar opção de voltar para o iniciar, inves de encerrar. Ou dar 2 chances.
         }
 
+Tarefas();
+        }
 
+    public void Tarefas() {
+        // Criamos um Scanner para ler as respostas do jogador
+        Scanner input = new Scanner(System.in);
+
+        // VETOR COM OS NOMES DAS SALAS DA NAVE
+        String[] salas = {
+                "SALA DE ENERGIA",
+                "SALA DO MOTOR",
+                "SALA DE OXIGÊNIO",
+                "SALA DE COMUNICAÇÃO",
+                "SALA DAS CÂMERAS",
+                "SALA DO SISTEMA CENTRAL",
+                "SALA DO REATOR",
+                "MÓDULO DE POUSO"
+        };
+
+        // Introdução da cena
+        digitarLento("CALEB: Piloto, você conseguiu ligar a nave!");
+        digitarLento("A TADS1 sabe onde estamos! Precisamos sair antes que o exército dela nos alcance!");
+        digitar("\nATENÇÃO, PILOTO! A NAVE ESTÁ SOB ATAQUE!");
+        digitarLento("ALGUMAS SALAS FORAM DANIFICADAS, REALIZE TAREFAS EM CADA UMA DELAS PARA PROSSEGUIRMOS!\n");
+        digitar("=====================================================");
+        digitar("VAMOS INICIAR PELA SALA ZERO (SALA DE ENERGIA)");
+        digitar ("=====================================================\n");
+
+        // Percorremos as salas em ORDEM NUMÉRICA
+        for (int i = 0; i < salas.length; i++) {
+
+            System.out.println("\n=====================================================");
+            digitarLento("VOCÊ ENTROU NA " + salas[i]);
+            System.out.println("=====================================================");
+
+            // Variável que indica se o jogador acertou a tarefa
+            boolean tarefaConcluida = false;
+            int erros = 0; // contador de erros (máximo 1 permitido)
+
+            // O jogador repete até acertar (ou errar 1x e depois acertar)
+            while (!tarefaConcluida) {
+
+                // --- CADA SALA TEM SUA TAREFA ESPECÍFICA ---
+                switch (i) {
+                    case 0: // SALA DE ENERGIA
+                        digitarLento("Caleb: ATENÇÃO, PILOTO! A SALA DE ENERGIA FOI DANIFICADA!");
+                        digitarLento("TAREFA: Converta o número 25 (decimal) para binário: ");
+                        String respEnergia = input.next();
+                        if (respEnergia.equals("11001")) {
+                           digitar("Caleb: PARABÉNS! A ENERGIA DA NAVE FOI RESTAURADA!");
+                            tarefaConcluida = true;
+                        } else {
+                            erros++;
+                            if (erros < 2)
+                                digitar("FALHA NO SISTEMA, TENTE NOVAMENTE!");
+                            else
+                                digitar("SEGUNDA FALHA DETECTADA. REFAZENDO TAREFA!");
+                        }
+                        break;
+
+                    case 1: // SALA DO MOTOR
+                        digitarLento("Caleb: A SALA DO MOTOR FOI INVADIDA PELA TADS1!");
+                        digitarLento("TAREFA: Converta o número 101101 (binário) para decimal: ");
+                        int motor = input.nextInt();
+                        if (motor == 45) {
+                            digitar("Caleb: PARABÉNS! MOTORES CONSERTADOS!");
+                            tarefaConcluida = true;
+                        } else {
+                            erros++;
+                            if (erros < 2)
+                                digitar("MOTOR COM SOMENTE 20% FUNCIONANDO, TENTE NOVAMENTE!");
+                            else
+                                digitar("ERRO CRÍTICO! REPITA A TAREFA!");
+                        }
+                        break;
+
+                    case 2: // SALA DE OXIGÊNIO
+                        digitarLento("Caleb: TADS1 implantou um vírus no sistema de oxigênio!");
+                        digitarLento("TAREFA: Converta o número 10100 (binário) para decimal: ");
+                        int oxigenio = input.nextInt();
+                        if (oxigenio == 20) {
+                            digitar("Caleb: PARABÉNS! SISTEMAS DE OXIGÊNIO FUNCIONANDO!");
+                            tarefaConcluida = true;
+                        } else {
+                            erros++;
+                            if (erros < 2)
+                                digitar("OXIGÊNIO EM 45%, TENTE NOVAMENTE!");
+                            else
+                               digitar("SEGUNDA FALHA DETECTADA, REFAZENDO TAREFA!");
+                        }
+                        break;
+                }
+            }
+        }
     }
+
+
+
+
+
     // ========FIM DA FUNÇÃO JOGAR: (FIM DO MAIN) ==============
 
     public void creditos() {
