@@ -512,47 +512,47 @@ Tarefas();
 
         // ==================== QUESTÕES ====================
         public void questao(String titulo, String pergunta, String respostaCorreta, String[] dicas) throws InterruptedException {
-            digitar("\n🧩 Questão: " + titulo);
-            digitar("Caleb: " + pergunta);
+            digitar(cores.NEGRITO+"\n🧩 Questão: " + titulo + cores.RESET);
+            digitar(cores.CIANO+"Caleb: "+cores.RESET + pergunta);
             Thread.sleep(1000);
 
             int tentativas = 0;
             boolean acertou = false;
 
             while (tentativas < 3 && !acertou) {
-                digitar("💬 Sua resposta (ou digite 'ajuda' para dica): ");
+                digitar(cores.NEGRITO+"💬 Sua resposta (ou digite 'ajuda' para dica): "+cores.RESET);
                 String resposta = sc.nextLine().trim();
 
-                if (resposta.equalsIgnoreCase("ajuda")) {
+                if (resposta.equalsIgnoreCase(cores.NEGRITO+"ajuda"+cores.RESET)) {
                     mostrarDicas(dicas);
                     continue;
                 }
 
                 if (resposta.equals(respostaCorreta)) {
-                    digitar("✅ Caleb: Excelente! Você acertou!");
+                    digitar(cores.CIANO+"✅ Caleb:"+cores.RESET+cores.NEGRITO+" Excelente! Você acertou!"+cores.RESET);
                     pontuacao++;
                     acertou = true;
                 } else {
                     tentativas++;
                     if (tentativas == 1)
-                        digitar("Caleb: Ei, tome cuidado. Isso pode te prejudicar futuramente. Vamos tentar de novo.");
+                        digitar(cores.CIANO+"Caleb:"+cores.RESET+cores.NEGRITO+" Ei, tome cuidado. Isso pode te prejudicar futuramente. Vamos tentar de novo."+cores.RESET);
                     else if (tentativas == 2)
-                        digitar("Caleb: Se estiver nervoso, não tem problema. Se acalme e pense mais um pouco.");
+                        digitar(cores.CIANO+"Caleb:"+cores.RESET+cores.NEGRITO+" Se estiver nervoso, não tem problema. Se acalme e pense mais um pouco."+cores.RESET);
                     else {
-                        digitar("Caleb: Quer ver o ensinamento novamente antes de continuar? (Sim/Não)");
+                        digitar(cores.CIANO+"Caleb:"cores.RESET+cores.NEGRITO+" Quer ver o ensinamento novamente antes de continuar? (Sim/Não)"+cores.RESET);
                         String escolha = sc.nextLine().trim().toLowerCase();
                         if (escolha.equals("sim")) {
                             tutorial(titulo);
                             tentativas = 0; // reinicia as tentativas
                         } else {
-                            digitar("Caleb: Tudo bem, seguimos em frente.");
+                            digitar(cores.CIANO+"Caleb:"+cores.RESET+cores.NEGRITO+" Tudo bem, seguimos em frente."+cores.RESET);
                         }
                     }
                 }
             }
 
             if (!acertou) {
-                digitar("❌ Caleb: A resposta correta era: " + respostaCorreta);
+                digitar("❌"+cores.CIANO+"Caleb:"+cores.RESET+cores.NEGRITO+"A resposta correta era: "+cores.RESET+ cores.VERDECLARO+ respostaCorreta+cores.RESET);
             }
         }
 
