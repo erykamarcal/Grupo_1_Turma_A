@@ -15,9 +15,9 @@ public class programa {
     public void mostrarMenu(String sovrevivenciaEntreZerosUns) {
         int opcao;
         do {
-            System.out.println(cores.CINZA + "==========================================");
+            System.out.println(cores.CINZA + "============================================================================================================================================================================================================================================================================================================================");
             System.out.println(sovrevivenciaEntreZerosUns);
-            System.out.println(cores.CINZA + "==========================================" + cores.RESET);
+            System.out.println(cores.CINZA + "============================================================================================================================================================================================================================================================================================================================" + cores.RESET);
             System.out.println(cores.AZULCLARO + "1 - Instruções");
             System.out.println("2 - Jogar");
             System.out.println("3 - Créditos");
@@ -155,14 +155,14 @@ public class programa {
                  DESAFIO 1: Ligar a Nave e Sair do Planeta
                  =========================================
                 """ + cores.RESET);
-        digitar("Caleb: \"" + nomeJogador + ", o painel de energia está travado!\"");
-        digitar("Caleb: \"Você precisa decifrar os códigos binários para desativar o sistema de segurança.\"");
-        digitarRapido("Os códigos aparecerão um de cada vez...");
+        digitar(cores.CIANO+"Caleb: \""+cores.RESET + cores.ROXO + nomeJogador + cores.RESET + cores.NEGRITO+", o painel de energia está travado!\"" + cores.RESET);
+        digitar(cores.CIANO+"Caleb: \" "+cores.RESET+ cores.NEGRITO+"Você precisa decifrar os códigos binários para desativar o sistema de segurança.\""+cores.RESET);
+        digitarRapido(cores.NEGRITO+"Os códigos aparecerão um de cada vez...");
 
         digitar("""
                 Para preservar a localização da base, a Resistência programou a nave para ter somente 1 erro
                 na senha, ou seja, você tem 2 chances de acertar!
-                """);
+                """+cores.RESET);
 
         // Vetor com os números que o jogador precisa converter
         String[] codigosBinarios = {"10", "101", "111", "1000"}; //numeros em binario
@@ -178,7 +178,7 @@ public class programa {
             System.out.println("Digite quanto esse numero vale em decimal: " + cores.RESET);
             int respostaJogador = input.nextInt();
             if (respostaJogador == respostasDecimais[i]) {
-                digitarRapido(cores.VERDECLARO + "Correto!" + cores.RESET + cores.NEGRITO + "Código " + (i + 1) + " desativado com sucesso." + cores.RESET);
+                digitarRapido(cores.VERDECLARO + "Correto!" + cores.RESET + cores.NEGRITO + " Código " + (i + 1) + " desativado com sucesso." + cores.RESET);
                 somaTotal += respostaJogador; // vai acumular se a resposta for certa
             } else {
                 tentativasRestantes--;
@@ -217,18 +217,18 @@ public class programa {
         }
 
         digitarLento(cores.VERDECLARO + "Iniciando sequência de propulsão..." + cores.RESET);
-        digitar(cores.NEGRITO + "\nDigite a soma total dos valores decifrados: " + cores.RESET); // Soma esperada: 22
+        digitar(cores.NEGRITO + "\n Digite a soma total dos valores decifrados: " + cores.RESET); // Soma esperada: 22
         int respostaFinal = input.nextInt();
 
         if (respostaFinal == somaTotal) {
             digitar(cores.CIANO + "Caleb: " + cores.RESET);
-            digitar(cores.NEGRITO + "Mandou bem, " + cores.RESET + cores.ROXO + nomeJogador + cores.RESET + cores.VERDECLARO + "! Propulsores em ignição..." + cores.RESET);
+            digitar(cores.NEGRITO + " Mandou bem, " + cores.RESET + cores.ROXO + nomeJogador + cores.RESET + cores.VERDECLARO + " ! Propulsores em ignição..." + cores.RESET);
             digitar(cores.NEGRITO + "A nave está subindo!");
             digitar("Entrando em órbita do planeta F25A..." + cores.RESET);
-            digitar(cores.CIANO + "Caleb:" + cores.RESET + cores.VERDECLARO + "Excelente trabalho! " + cores.RESET + cores.NEGRITO + "Graças a voce, a humanidade poderá ter uma chance!" + cores.RESET);
+            digitar(cores.CIANO + "Caleb:" + cores.RESET + cores.VERDECLARO + " Excelente trabalho! " + cores.RESET + cores.NEGRITO + "Graças a voce, a humanidade poderá ter uma chance!" + cores.RESET);
         } else {
             digitar(cores.VERMELHO + "Valor incorreto!" + cores.RESET);
-            digitar(cores.CIANO + "Caleb:" + cores.RESET + cores.VERMELHO + "A soma está errada..." + cores.RESET + cores.NEGRITO + " os motores não responderam a tempo!" + cores.RESET);
+            digitar(cores.CIANO + "Caleb:" + cores.RESET + cores.VERMELHO + " A soma está errada..." + cores.RESET + cores.NEGRITO + " os motores não responderam a tempo!" + cores.RESET);
             digitar(cores.VERMELHO + "Falha na decolagem!");
             digitar("A nave foi localizada pela TADS1...");
             digitarRapido("FIM DE JOGO." + cores.RESET);
@@ -239,6 +239,7 @@ public class programa {
 Tarefas();
         }
 
+        //cor nao adiconada possivelmente arrumar
     public void Tarefas() {
         // Criamos um Scanner para ler as respostas do jogador
         Scanner input = new Scanner(System.in);
@@ -434,8 +435,8 @@ Tarefas();
         digitarLento("6 ÷ 2 = 3 (resto 0)");
         digitarLento("3 ÷ 2 = 1 (resto 1)");
         digitarLento("1 ÷ 2 = 0 (resto 1)" + cores.RESET);
-        digitarLento(cores.NEGRITO + "Lendo os restos de baixo pra cima →" + cores.RESET + cores.AZULCLARO + "1101" + cores.RESET);
-        digitarLento(cores.NEGRITO + "Portanto," + cores.RESET + cores.AZULCLARO + "13 " + cores.RESET + cores.NEGRITO + "(decimal) = " + cores.RESET + cores.AZULCLARO + "1101 " + cores.RESET + cores.NEGRITO + "(binário)." + cores.RESET);
+        digitarLento(cores.NEGRITO + "Lendo os restos de baixo pra cima →" + cores.RESET + cores.AZULCLARO + " 1101" + cores.RESET);
+        digitarLento(cores.NEGRITO + "Portanto, " + cores.RESET + cores.AZULCLARO + "13 " + cores.RESET + cores.NEGRITO + "(decimal) = " + cores.RESET + cores.AZULCLARO + "1101 " + cores.RESET + cores.NEGRITO + "(binário)." + cores.RESET);
 
         System.out.println(cores.NEGRITO + "\nPressione " + cores.RESET + cores.AMARELO + "ENTER " + cores.RESET + cores.NEGRITO + "para continuar..." + cores.RESET);
         input.nextLine();
@@ -469,20 +470,20 @@ Tarefas();
 
         // ==================== INÍCIO DO JOGO ====================
         public void testeNaoObrigatorio() throws InterruptedException {
-            digitar("Caleb: Ei! Antes de prosseguirmos, gostaria de fazer um mini teste para verificar o seu entendimento?");
-            digitar("Digite 'Sim' para iniciar ou 'Não' para pular e seguir com o gameplay.");
+            digitar(cores.CIANO+"Caleb:"+cores.RESET+cores.NEGRITO+"Ei! Antes de prosseguirmos, gostaria de fazer um mini teste para verificar o seu entendimento?");
+            digitar("Digite 'Sim' para iniciar ou 'Não' para pular e seguir com o gameplay."+cores.RESET);
             String escolha = sc.nextLine().trim().toLowerCase();
 
             if (escolha.equals("sim")) {
                 miniTeste();
             } else {
-                digitar("Caleb: Tudo bem, piloto. Vamos continuar o gameplay.");
+                digitar(cores.CIANO+"Caleb:"+cores.RESET+cores.NEGRITO+"Tudo bem, piloto. Vamos continuar o gameplay."+cores.RESET);
             }
         }
 
         // ==================== MINI TESTE ====================
         public void miniTeste() throws InterruptedException {
-            questao("Decimal → Binário", "Converta o número 9 (decimal) para binário.",
+            questao(cores.NEGRITO+"Decimal → Binário", "Converta o número 9 (decimal) para binário.",
                     "1001",
                     new String[]{"Divida por 2 até chegar a 0.", "Leia os restos de baixo para cima.",
                             "Pense em 2⁰, 2¹, 2²...", "O resultado começa com 1 e termina com 1."});
@@ -504,7 +505,7 @@ Tarefas();
             questao("Conversão Combinada", "Qual é o binário e o octal do número 10 (decimal)?",
                     "1010 12",
                     new String[]{"Divida o número por 2 e depois por 8.", "Binário usa 0 e 1, octal vai até 7.",
-                            "Decimal → Binário → divida por 2 até 0.", "Decimal → Octal → divida por 8 até 0."});
+                            "Decimal → Binário → divida por 2 até 0.", "Decimal → Octal → divida por 8 até 0."+cores.RESET});
 
             resultadoFinal();
         }
