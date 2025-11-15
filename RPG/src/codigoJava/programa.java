@@ -539,7 +539,7 @@ Tarefas();
                     else if (tentativas == 2)
                         digitar(cores.CIANO+"Caleb:"+cores.RESET+cores.NEGRITO+" Se estiver nervoso, não tem problema. Se acalme e pense mais um pouco."+cores.RESET);
                     else {
-                        digitar(cores.CIANO+"Caleb:"cores.RESET+cores.NEGRITO+" Quer ver o ensinamento novamente antes de continuar? (Sim/Não)"+cores.RESET);
+                        digitar(cores.CIANO+"Caleb:"+cores.RESET+cores.NEGRITO+" Quer ver o ensinamento novamente antes de continuar? (Sim/Não)"+cores.RESET);
                         String escolha = sc.nextLine().trim().toLowerCase();
                         if (escolha.equals("sim")) {
                             tutorial(titulo);
